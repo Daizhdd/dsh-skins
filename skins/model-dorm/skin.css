@@ -185,8 +185,9 @@
          它们不是"结构"，是**阴影的颜色**，而且是中性冷黑。一张暖紫褐的画
          上落一层纯黑阴影，正是那种说不清哪里不对、但就是脏的感觉 ——
          README 自己写着"最深只到 #32272b，从不用纯黑"，偏偏这四组漏在外面。
-         现在把它们整族改成画里的暖褐，偏移/模糊/alpha 逐字保留，
-         所以观感与作者原本调的完全一致，只是变暖。
+         现在把它们整族改成画里的暖褐：偏移与模糊半径逐字保留，alpha 则
+         按暖色阴影的感知权重略作上调（0d→12、05→08、0a→12、14→1f），
+         让暖褐与原来的纯黑观感等重。
 
        · --dsw-linear-gradient-think / -think-select 当初记为"官方值格式
          无法离线验证"。现在从线上构建里读到了真格式：
@@ -230,7 +231,7 @@
   --dsw-radius-lg: 14px;
   --dsw-radius-xl: 18px;
   --dsw-radius-panel: 16px;
-  --dsw-alias-menu-surface-fill: rgba(253, 244, 234, 0.92);
+  --dsw-menu-surface-fill: rgba(253, 244, 234, 0.92);
   --dsw-alias-menu-icon: #6b4f47;
   --dsw-alias-menu-group-header-fill: rgba(250, 240, 230, 0.64);
   --dsw-alias-settings-card-fill: rgba(255, 250, 244, 0.60);
@@ -244,9 +245,8 @@
   --dsw-alias-label-shimmer: #8d7168;
   --dsw-alias-label-quaternary: #ac948b;
   --dsw-alias-separator-primary: #8d7168;
-  --dsw-alias-state-warning-primary: #b57d12;
   --dsw-alias-turn-trigger-bg: rgba(250, 240, 230, 0.64);
-  --dsw-alias-turn-trigger-hover: rgba(245, 231, 218, 0.68);
+  --dsw-alias-turn-trigger-bg-hover: rgba(245, 231, 218, 0.68);
   --dsw-alias-toast-label: #fff8f2;
   --dsw-alias-tooltip-key-bg: rgba(245, 231, 218, 0.68);
 }
@@ -405,7 +405,7 @@ body[data-ds-dark-theme] {
   --dsw-radius-lg: 14px;
   --dsw-radius-xl: 18px;
   --dsw-radius-panel: 16px;
-  --dsw-alias-menu-surface-fill: rgba(62, 45, 50, 0.92);
+  --dsw-menu-surface-fill: rgba(62, 45, 50, 0.92);
   --dsw-alias-menu-icon: #e6d5ca;
   --dsw-alias-menu-group-header-fill: rgba(114, 85, 93, 0.60);
   --dsw-alias-settings-card-fill: rgba(100, 74, 82, 0.58);
@@ -419,9 +419,8 @@ body[data-ds-dark-theme] {
   --dsw-alias-label-shimmer: #cfb8ac;
   --dsw-alias-label-quaternary: #b0978c;
   --dsw-alias-separator-primary: #cfb8ac;
-  --dsw-alias-state-warning-primary: #e0a94f;
   --dsw-alias-turn-trigger-bg: rgba(114, 85, 93, 0.60);
-  --dsw-alias-turn-trigger-hover: rgba(120, 89, 97, 0.62);
+  --dsw-alias-turn-trigger-bg-hover: rgba(120, 89, 97, 0.62);
   --dsw-alias-toast-label: #231a1c;
   --dsw-alias-tooltip-key-bg: rgba(120, 89, 97, 0.62);
 }
